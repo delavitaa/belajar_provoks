@@ -1,0 +1,678 @@
+/* ========================================
+   1. RESET DAN PENGATURAN DASAR
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --navy: #14213d;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --text: #334155;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --light-blue: #eff6ff;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--white);
+}
+
+
+/* ========================================
+   2. HEADER DAN NAVIGASI
+======================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+header .container {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    color: var(--navy);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+
+/* ========================================
+   3. HERO / HALAMAN PEMBUKA
+======================================== */
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 28%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 680px;
+}
+
+.hero-text .greeting {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 7px 14px;
+    border-radius: 50px;
+    background-color: #dbeafe;
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.hero h1 {
+    margin-bottom: 18px;
+    color: var(--navy);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 580px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border: 8px solid var(--white);
+    border-radius: 35px;
+    box-shadow: var(--shadow);
+}
+
+.hero-image .placeholder {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid var(--white);
+    border-radius: 35px;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    color: var(--primary-dark);
+    font-size: 5rem;
+    font-weight: 800;
+    box-shadow: var(--shadow);
+}
+
+
+/* ========================================
+   4. TOMBOL
+======================================== */
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.2);
+}
+
+.button-outline {
+    margin-left: 10px;
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.button-outline:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-dark);
+}
+
+
+/* ========================================
+   5. JUDUL SETIAP BAGIAN
+======================================== */
+
+.section-title {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.3;
+    text-align: center;
+}
+
+.section-subtitle {
+    max-width: 650px;
+    margin: 0 auto 42px;
+    color: var(--muted);
+    text-align: center;
+}
+
+
+/* ========================================
+   6. ABOUT / TENTANG SAYA
+======================================== */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+    gap: 40px;
+}
+
+.about-text h3 {
+    margin-bottom: 14px;
+    color: var(--navy);
+    font-size: 1.4rem;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+    color: var(--muted);
+}
+
+.about-info {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.about-info h3 {
+    margin-bottom: 18px;
+    color: var(--navy);
+}
+
+.about-info p {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+
+.about-info p:last-child {
+    border-bottom: none;
+}
+
+.about-info strong {
+    color: var(--navy);
+}
+
+
+/* ========================================
+   7. PENDIDIKAN
+======================================== */
+
+#education {
+    background-color: var(--light-blue);
+}
+
+.education-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 30px;
+    border-left: 5px solid var(--primary);
+    border-radius: 14px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.education-card h3 {
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-size: 1.35rem;
+}
+
+.education-card .education-year {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.education-card p {
+    color: var(--muted);
+}
+
+
+/* ========================================
+   8. MINAT DAN KETERAMPILAN
+======================================== */
+
+#interests {
+    background-color: var(--white);
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.interest-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background-color: var(--background);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.interest-card .icon {
+    margin-bottom: 14px;
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.interest-card h3 {
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.interest-card p {
+    color: var(--muted);
+}
+
+
+/* ========================================
+   9. PROYEK
+======================================== */
+
+#projects {
+    background-color: var(--background);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.project-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #dbeafe;
+}
+
+.project-card-content {
+    padding: 24px;
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    margin-bottom: 18px;
+    color: var(--muted);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    padding: 5px 12px;
+    border-radius: 50px;
+    background-color: var(--light-blue);
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   10. HOBI
+======================================== */
+
+#hobbies {
+    background-color: var(--white);
+}
+
+.hobby-grid,
+.hobbies-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.hobby-card,
+.hobbies-list li {
+    padding: 24px 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background-color: var(--background);
+    color: var(--navy);
+    font-weight: 600;
+    text-align: center;
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.hobby-card:hover,
+.hobbies-list li:hover {
+    transform: translateY(-4px);
+    background-color: var(--light-blue);
+}
+
+
+/* ========================================
+   11. KONTAK
+======================================== */
+
+#contact {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+#contact .section-title {
+    color: var(--white);
+}
+
+#contact .section-subtitle {
+    color: #cbd5e1;
+}
+
+.contact-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-content p {
+    margin-bottom: 24px;
+    color: #cbd5e1;
+}
+
+#contact .button {
+    border-color: var(--white);
+    background-color: var(--white);
+    color: var(--navy);
+}
+
+#contact .button:hover {
+    border-color: #dbeafe;
+    background-color: #dbeafe;
+}
+
+
+/* ========================================
+   12. FOOTER
+======================================== */
+
+footer {
+    padding: 24px 0;
+    background-color: #0b1224;
+    color: #cbd5e1;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   13. RESPONSIVE - TABLET
+======================================== */
+
+@media (max-width: 900px) {
+    header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 16px 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin: 0 auto;
+    }
+
+    .hero p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-image {
+        grid-row: 1;
+    }
+
+    .hero-image img,
+    .hero-image .placeholder {
+        width: 220px;
+        height: 220px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   14. RESPONSIVE - HP
+======================================== */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    section {
+        padding: 58px 0;
+    }
+
+    header .container {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 8px 14px;
+    }
+
+    nav a {
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-image img,
+    .hero-image .placeholder {
+        width: 180px;
+        height: 180px;
+        border-radius: 25px;
+    }
+
+    .button {
+        padding: 11px 16px;
+        font-size: 0.88rem;
+    }
+
+    .button-outline {
+        margin-left: 4px;
+    }
+
+    .interests-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby-grid,
+    .hobbies-list {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card,
+    .about-info,
+    .interest-card,
+    .project-card-content {
+        padding: 22px;
+    }
+
+    .project-card img {
+        height: 190px;
+    }
+}
